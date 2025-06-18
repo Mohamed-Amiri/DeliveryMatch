@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "deliverymatch-api-tests",
+		"name": "DeliveryMatch API Tests",
+		"description": "Complete API test collection for DeliveryMatch application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Health Check",
+			"item": [
+				{
+					"name": "Test Controller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/test",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "test"]
+						}
+					}
+				},
+				{
+					"name": "Debug Users Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/debug-users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "debug-users"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"email\": \"test123@example.com\",\n    \"password\": \"password123\",\n    \"phoneNumber\": \"1234567890\",\n    \"address\": \"123 Test St\",\n    \"city\": \"Test City\",\n    \"postalCode\": \"12345\",\n    \"country\": \"Test Country\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["auth", "register"]
+						}
+					}
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test123@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["auth", "login"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "3. User Profile (Protected)",
+			"item": [
+				{
+					"name": "Get Profile (with token)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/profile",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "profile"]
+						}
+					}
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Updated\",\n    \"lastName\": \"Name\",\n    \"email\": \"test123@example.com\",\n    \"phoneNumber\": \"9876543210\",\n    \"address\": \"456 Updated St\",\n    \"city\": \"Updated City\",\n    \"postalCode\": \"54321\",\n    \"country\": \"Updated Country\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/profile",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "profile"]
+						}
+					}
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPassword\": \"password123\",\n    \"newPassword\": \"newpassword123\",\n    \"confirmPassword\": \"newpassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/change-password",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "change-password"]
+						}
+					}
+				},
+				{
+					"name": "Deactivate Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/deactivate",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "deactivate"]
+						}
+					}
+				},
+				{
+					"name": "Reactivate Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/reactivate",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "reactivate"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "4. Debug Endpoints",
+			"item": [
+				{
+					"name": "Debug Auth Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/debug-auth",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "debug-auth"]
+						}
+					}
+				},
+				{
+					"name": "Simple Profile Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/profile-simple",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["users", "profile-simple"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt_token",
+			"value": "YOUR_JWT_TOKEN_HERE",
+			"type": "string"
+		}
+	]
+} 
