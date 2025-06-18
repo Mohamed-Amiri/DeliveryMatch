@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "driver-api-tests",
+		"name": "Driver API Tests",
+		"description": "Complete test collection for Driver (Conducteur) functionality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register Driver",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Jean\",\n  \"lastName\": \"Dupont\",\n  \"email\": \"jean.dupont@example.com\",\n  \"password\": \"password123\",\n  \"phone\": \"+33123456789\",\n  \"role\": \"DRIVER\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": ["{{baseUrl}}"],
+							"path": ["auth", "register"]
+						}
+					}
+				},
+				{
+					"name": "Login Driver",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"jean.dupont@example.com\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": ["{{baseUrl}}"],
+							"path": ["auth", "login"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Trip Management",
+			"item": [
+				{
+					"name": "Create Trip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"departureLocation\": \"Paris, France\",\n  \"destinationLocation\": \"Lyon, France\",\n  \"intermediateStops\": [\"Dijon, France\"],\n  \"departureTime\": \"2024-01-15T08:00:00\",\n  \"estimatedArrivalTime\": \"2024-01-15T14:00:00\",\n  \"maxLength\": 200.0,\n  \"maxWidth\": 150.0,\n  \"maxHeight\": 100.0,\n  \"maxWeight\": 500.0,\n  \"availableCapacity\": 1000.0,\n  \"acceptedCargoTypes\": [\"Electronics\", \"Clothing\", \"Books\"],\n  \"description\": \"Regular trip from Paris to Lyon with stop in Dijon\",\n  \"price\": 2.50\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips"]
+						}
+					}
+				},
+				{
+					"name": "Get Driver Trips",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips?page=0&size=10",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Active Trips",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips/active",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips", "active"]
+						}
+					}
+				},
+				{
+					"name": "Get Trip by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips/{{tripId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips", "{{tripId}}"]
+						}
+					}
+				},
+				{
+					"name": "Update Trip Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips/{{tripId}}/status?status=IN_PROGRESS",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips", "{{tripId}}", "status"],
+							"query": [
+								{
+									"key": "status",
+									"value": "IN_PROGRESS"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Trip",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips/{{tripId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips", "{{tripId}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Shipment Requests",
+			"item": [
+				{
+					"name": "Get Pending Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/requests?page=0&size=10",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "requests"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Accepted Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/requests/accepted?page=0&size=10",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "requests", "accepted"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Requests for Trip",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips/{{tripId}}/requests?page=0&size=10",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips", "{{tripId}}", "requests"],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Request by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/requests/{{requestId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "requests", "{{requestId}}"]
+						}
+					}
+				},
+				{
+					"name": "Accept Request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"ACCEPTED\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/requests/{{requestId}}/status",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "requests", "{{requestId}}", "status"]
+						}
+					}
+				},
+				{
+					"name": "Reject Request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"REJECTED\",\n  \"rejectionReason\": \"Capacity exceeded\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/requests/{{requestId}}/status",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "requests", "{{requestId}}", "status"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Trip History",
+			"item": [
+				{
+					"name": "Get Completed Trips",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/trips/completed",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "trips", "completed"]
+						}
+					}
+				},
+				{
+					"name": "Get Completed Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{driverToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/driver/requests/completed",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "driver", "requests", "completed"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "driverToken",
+			"value": "your_jwt_token_here"
+		},
+		{
+			"key": "tripId",
+			"value": "1"
+		},
+		{
+			"key": "requestId",
+			"value": "1"
+		}
+	]
+} 
