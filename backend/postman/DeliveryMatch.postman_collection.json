@@ -72,6 +72,7 @@
 					"response": []
 				}
 			]
+<<<<<<< HEAD
 		},
 		{
 			"name": "User Management",
@@ -235,6 +236,8 @@
 			"key": "jwt_token",
 			"value": "your_jwt_token_here",
 			"type": "string"
+=======
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
 		}
 	]
 } 

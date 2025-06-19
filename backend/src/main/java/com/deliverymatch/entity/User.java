@@ -39,11 +39,13 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
 
+
     private String phoneNumber;
     private String address;
     private String city;
     private String postalCode;
     private String country;
+
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))

@@ -33,10 +33,14 @@ public class AuthenticationService {
         }
 
         Set<String> roles = new HashSet<>();
+<<<<<<< HEAD
         // Use provided role or default to "USER"
         String role = (request.getRole() != null && !request.getRole().trim().isEmpty()) 
             ? request.getRole() : "USER";
         roles.add(role);
+=======
+        roles.add(request.getRole());
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
 
         var user = User.builder()
                 .firstName(request.getFirstName())
@@ -55,7 +59,11 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .email(user.getEmail())
+<<<<<<< HEAD
                 .role(role)
+=======
+                .role(request.getRole())
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
                 .build();
     }
 
@@ -77,6 +85,7 @@ public class AuthenticationService {
             var jwtToken = jwtService.generateToken(user);
             logger.debug("JWT token generated for user: {}", user.getEmail());
             
+<<<<<<< HEAD
             // Safely get the first role or use a default
             String role = user.getRoles().isEmpty() ? "USER" : user.getRoles().iterator().next();
             
@@ -84,6 +93,12 @@ public class AuthenticationService {
                     .token(jwtToken)
                     .email(user.getEmail())
                     .role(role)
+=======
+            return AuthenticationResponse.builder()
+                    .token(jwtToken)
+                    .email(user.getEmail())
+                    .role(user.getRoles().iterator().next())
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
                     .build();
         } catch (Exception e) {
             logger.error("Authentication failed for user: {}", request.getEmail(), e);

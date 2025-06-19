@@ -33,9 +33,11 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(new AntPathRequestMatcher("/auth/**")).permitAll()
+
                 .requestMatchers(new AntPathRequestMatcher("/users/test")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/users/debug-users")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/users/profile-simple")).permitAll()
+
                 .requestMatchers(new AntPathRequestMatcher("/api-docs/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/swagger-ui.html")).permitAll()

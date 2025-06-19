@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # DeliveryMatch
 DeliveryMatch est une application web mettant en relation des conducteurs avec des expéditeurs de colis dans une logique de co-transport collaboratif. L’application vise à optimiser les trajets, réduire les coûts de transport et limiter l’impact environnemental.
 =======
+=======
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
 # DeliveryMatch Platform
 
 A platform connecting drivers and shippers for efficient delivery services.
@@ -131,5 +134,9 @@ deliverymatch/
 ## Deployment
 - Docker support
 - CI/CD pipeline configuration
+<<<<<<< HEAD
 - Environment-specific configurations 
 >>>>>>> 24d585f (Crée authentification)
+=======
+- Environment-specific configurations 
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43

@@ -21,6 +21,11 @@ spring:
 
 server:
   port: 8080
+<<<<<<< HEAD
+=======
+  servlet:
+    context-path: /api
+>>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
 
 springdoc:
   api-docs:
