@@ -62,6 +62,13 @@ public class ShipmentRequest {
     @Column(nullable = false)
     private BigDecimal offeredPrice; // price offered by shipper
 
+    @Column(length = 500)
+    private String specialInstructions;
+
+    private Boolean fragile;
+
+    private String insuranceRequired;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RequestStatus status = RequestStatus.PENDING;

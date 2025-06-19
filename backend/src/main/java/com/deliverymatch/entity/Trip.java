@@ -6,7 +6,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,19 +44,19 @@ public class Trip {
     private LocalDateTime estimatedArrivalTime;
 
     @Column(nullable = false)
-    private BigDecimal maxLength; // in cm
+    private Double maxLength;
 
     @Column(nullable = false)
-    private BigDecimal maxWidth; // in cm
+    private Double maxWidth;
 
     @Column(nullable = false)
-    private BigDecimal maxHeight; // in cm
+    private Double maxHeight;
 
     @Column(nullable = false)
-    private BigDecimal maxWeight; // in kg
+    private Double maxWeight;
 
     @Column(nullable = false)
-    private BigDecimal availableCapacity; // in kg
+    private Double availableCapacity;
 
     @ElementCollection
     @CollectionTable(name = "trip_accepted_cargo_types", joinColumns = @JoinColumn(name = "trip_id"))
@@ -72,7 +71,7 @@ public class Trip {
     private TripStatus status = TripStatus.ACTIVE;
 
     @Column(nullable = false)
-    private BigDecimal price; // price per kg
+    private Double price;
 
     @CreatedDate
     private LocalDateTime createdAt;

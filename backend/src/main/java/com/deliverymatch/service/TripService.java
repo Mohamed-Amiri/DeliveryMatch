@@ -2,6 +2,7 @@ package com.deliverymatch.service;
 
 import com.deliverymatch.dto.CreateTripRequest;
 import com.deliverymatch.dto.TripResponse;
+import com.deliverymatch.dto.TripSearchRequest;
 import com.deliverymatch.entity.ShipmentRequest;
 import com.deliverymatch.entity.Trip;
 import com.deliverymatch.entity.User;
@@ -39,14 +40,14 @@ public class TripService {
                 .intermediateStops(request.getIntermediateStops() != null ? request.getIntermediateStops() : List.of())
                 .departureTime(request.getDepartureTime())
                 .estimatedArrivalTime(request.getEstimatedArrivalTime())
-                .maxLength(request.getMaxLength())
-                .maxWidth(request.getMaxWidth())
-                .maxHeight(request.getMaxHeight())
-                .maxWeight(request.getMaxWeight())
-                .availableCapacity(request.getAvailableCapacity())
+                .maxLength(request.getMaxLength() != null ? request.getMaxLength().doubleValue() : null)
+                .maxWidth(request.getMaxWidth() != null ? request.getMaxWidth().doubleValue() : null)
+                .maxHeight(request.getMaxHeight() != null ? request.getMaxHeight().doubleValue() : null)
+                .maxWeight(request.getMaxWeight() != null ? request.getMaxWeight().doubleValue() : null)
+                .availableCapacity(request.getAvailableCapacity() != null ? request.getAvailableCapacity().doubleValue() : null)
                 .acceptedCargoTypes(request.getAcceptedCargoTypes() != null ? request.getAcceptedCargoTypes() : List.of())
                 .description(request.getDescription())
-                .price(request.getPrice())
+                .price(request.getPrice() != null ? request.getPrice().doubleValue() : null)
                 .status(Trip.TripStatus.ACTIVE)
                 .build();
         
@@ -118,6 +119,27 @@ public class TripService {
         }
         
         tripRepository.delete(trip);
+    }
+    
+    public Page<TripResponse> searchTrips(TripSearchRequest searchRequest, Pageable pageable) {
+        Page<Trip> trips = tripRepository.findAvailableTripsWithCriteria(
+            searchRequest.getDepartureLocation(),
+            searchRequest.getDestinationLocation(),
+            searchRequest.getDepartureDate(),
+            searchRequest.getCargoTypes(),
+            searchRequest.getMaxWeight(),
+            searchRequest.getMaxLength(),
+            searchRequest.getMaxWidth(),
+            searchRequest.getMaxHeight(),
+            pageable
+        );
+        return trips.map(this::mapToTripResponse);
+    }
+
+    public TripResponse getTripDetails(Long tripId) {
+        Trip trip = tripRepository.findById(tripId)
+                .orElseThrow(() -> new ResourceNotFoundException("Trip not found"));
+        return mapToTripResponse(trip);
     }
     
     private TripResponse mapToTripResponse(Trip trip) {

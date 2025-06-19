@@ -11,11 +11,8 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShipmentRequestResponse {
-    private Long id;
+public class ShipmentRequest {
     private Long tripId;
-    private Long shipperId;
-    private String shipperName;
     private String cargoType;
     private Double weight;
     private Double length;
@@ -30,7 +27,4 @@ public class ShipmentRequestResponse {
     private LocalDateTime pickupTime;
     private LocalDateTime deliveryDeadline;
     private Double offeredPrice;
-    private String status;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 } 

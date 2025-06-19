@@ -15,17 +15,20 @@ import java.util.List;
 @Repository
 public interface ShipmentRequestRepository extends JpaRepository<ShipmentRequest, Long> {
     
+    // Find requests by shipper
+    Page<ShipmentRequest> findByShipperOrderByCreatedAtDesc(User shipper, Pageable pageable);
+    
+    // Find requests by shipper and status
+    List<ShipmentRequest> findByShipperAndStatusOrderByCreatedAtDesc(User shipper, ShipmentRequest.RequestStatus status);
+    
     // Find requests by trip
     Page<ShipmentRequest> findByTripOrderByCreatedAtDesc(Trip trip, Pageable pageable);
     
     // Find requests by trip and status
     List<ShipmentRequest> findByTripAndStatusOrderByCreatedAtDesc(Trip trip, ShipmentRequest.RequestStatus status);
     
-    // Find requests by shipper
-    Page<ShipmentRequest> findByShipperOrderByCreatedAtDesc(User shipper, Pageable pageable);
-    
-    // Find requests by shipper and status
-    List<ShipmentRequest> findByShipperAndStatusOrderByCreatedAtDesc(User shipper, ShipmentRequest.RequestStatus status);
+    // Count requests by trip and status
+    long countByTripAndStatus(Trip trip, ShipmentRequest.RequestStatus status);
     
     // Find pending requests for a driver's trips
     @Query("SELECT sr FROM ShipmentRequest sr WHERE sr.trip.driver = :driver AND sr.status = 'PENDING' ORDER BY sr.createdAt DESC")
@@ -35,10 +38,7 @@ public interface ShipmentRequestRepository extends JpaRepository<ShipmentRequest
     @Query("SELECT sr FROM ShipmentRequest sr WHERE sr.trip.driver = :driver AND sr.status = 'ACCEPTED' ORDER BY sr.createdAt DESC")
     Page<ShipmentRequest> findAcceptedRequestsForDriver(@Param("driver") User driver, Pageable pageable);
     
-    // Count requests by trip and status
-    long countByTripAndStatus(Trip trip, ShipmentRequest.RequestStatus status);
-    
     // Find completed requests for a driver's trips
-    @Query("SELECT sr FROM ShipmentRequest sr WHERE sr.trip.driver = :driver AND sr.status = 'COMPLETED' ORDER BY sr.updatedAt DESC")
+    @Query("SELECT sr FROM ShipmentRequest sr WHERE sr.trip.driver = :driver AND sr.status = 'COMPLETED' ORDER BY sr.createdAt DESC")
     List<ShipmentRequest> findCompletedRequestsForDriver(@Param("driver") User driver);
 } 
