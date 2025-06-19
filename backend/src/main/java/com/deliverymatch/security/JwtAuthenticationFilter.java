@@ -29,24 +29,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getServletPath();
         logger.debug("Checking path for JWT filter: {}", path);
-<<<<<<< HEAD
-        
+
         // Only skip specific public endpoints
         boolean shouldNotFilter = path.startsWith("/auth/") || 
                                 path.equals("/users/test") ||
                                 path.equals("/users/debug-users") ||
                                 path.equals("/users/profile-simple") ||
-=======
-        boolean shouldNotFilter = path.startsWith("/auth/") || 
->>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
                                 path.startsWith("/api-docs/") || 
                                 path.startsWith("/swagger-ui/") || 
                                 path.equals("/swagger-ui.html") ||
                                 path.equals("/error");
-<<<<<<< HEAD
-        
-=======
->>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
+
         logger.debug("Should not filter: {}", shouldNotFilter);
         return shouldNotFilter;
     }
@@ -57,7 +50,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
-<<<<<<< HEAD
         try {
             final String authHeader = request.getHeader("Authorization");
             final String jwt;
@@ -101,38 +93,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             logger.error("Error processing JWT authentication: {}", e.getMessage(), e);
         }
         
-=======
-        final String authHeader = request.getHeader("Authorization");
-        final String jwt;
-        final String userEmail;
-
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            logger.debug("No Bearer token found in request");
-            filterChain.doFilter(request, response);
-            return;
-        }
-
-        jwt = authHeader.substring(7);
-        userEmail = jwtService.extractUsername(jwt);
-        logger.debug("Processing JWT for user: {}", userEmail);
-
-        if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
-            
-            if (jwtService.isTokenValid(jwt, userDetails)) {
-                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        userDetails,
-                        null,
-                        userDetails.getAuthorities()
-                );
-                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authToken);
-                logger.debug("Authentication successful for user: {}", userEmail);
-            } else {
-                logger.debug("Invalid JWT token for user: {}", userEmail);
-            }
-        }
->>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
         filterChain.doFilter(request, response);
     }
 } 

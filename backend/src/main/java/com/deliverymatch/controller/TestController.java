@@ -60,4 +60,9 @@ public class TestController {
         
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/test")
+    public String test() {
+        return "Backend is working!";
+    }
 } 

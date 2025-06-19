@@ -5,6 +5,8 @@ import com.deliverymatch.dto.ShipmentRequestResponse;
 import com.deliverymatch.dto.TripResponse;
 import com.deliverymatch.dto.UpdateShipmentRequestStatusRequest;
 import com.deliverymatch.entity.Trip;
+import com.deliverymatch.entity.User;
+import com.deliverymatch.repository.UserRepository;
 import com.deliverymatch.service.ShipmentRequestService;
 import com.deliverymatch.service.TripService;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +28,14 @@ public class DriverController {
     
     private final TripService tripService;
     private final ShipmentRequestService shipmentRequestService;
+    private final UserRepository userRepository;
+    
+    private Long getUserId(Authentication authentication) {
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        return user.getId();
+    }
     
     // Trip Management
     
@@ -33,7 +43,7 @@ public class DriverController {
     public ResponseEntity<TripResponse> createTrip(
             @RequestBody CreateTripRequest request,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         TripResponse trip = tripService.createTrip(driverId, request);
         return ResponseEntity.status(HttpStatus.CREATED).body(trip);
     }
@@ -43,7 +53,7 @@ public class DriverController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         Pageable pageable = PageRequest.of(page, size);
         Page<TripResponse> trips = tripService.getDriverTrips(driverId, pageable);
         return ResponseEntity.ok(trips);
@@ -51,14 +61,14 @@ public class DriverController {
     
     @GetMapping("/trips/active")
     public ResponseEntity<List<TripResponse>> getDriverActiveTrips(Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         List<TripResponse> trips = tripService.getDriverActiveTrips(driverId);
         return ResponseEntity.ok(trips);
     }
     
     @GetMapping("/trips/completed")
     public ResponseEntity<List<TripResponse>> getDriverCompletedTrips(Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         List<TripResponse> trips = tripService.getDriverCompletedTrips(driverId);
         return ResponseEntity.ok(trips);
     }
@@ -67,7 +77,7 @@ public class DriverController {
     public ResponseEntity<TripResponse> getTripById(
             @PathVariable Long tripId,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         TripResponse trip = tripService.getTripById(tripId, driverId);
         return ResponseEntity.ok(trip);
     }
@@ -77,7 +87,7 @@ public class DriverController {
             @PathVariable Long tripId,
             @RequestParam Trip.TripStatus status,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         TripResponse trip = tripService.updateTripStatus(tripId, driverId, status);
         return ResponseEntity.ok(trip);
     }
@@ -86,7 +96,7 @@ public class DriverController {
     public ResponseEntity<Void> deleteTrip(
             @PathVariable Long tripId,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         tripService.deleteTrip(tripId, driverId);
         return ResponseEntity.noContent().build();
     }
@@ -98,7 +108,7 @@ public class DriverController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         Pageable pageable = PageRequest.of(page, size);
         Page<ShipmentRequestResponse> requests = shipmentRequestService.getRequestsForDriver(driverId, pageable);
         return ResponseEntity.ok(requests);
@@ -109,7 +119,7 @@ public class DriverController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         Pageable pageable = PageRequest.of(page, size);
         Page<ShipmentRequestResponse> requests = shipmentRequestService.getAcceptedRequestsForDriver(driverId, pageable);
         return ResponseEntity.ok(requests);
@@ -117,7 +127,7 @@ public class DriverController {
     
     @GetMapping("/requests/completed")
     public ResponseEntity<List<ShipmentRequestResponse>> getCompletedRequests(Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         List<ShipmentRequestResponse> requests = shipmentRequestService.getCompletedRequestsForDriver(driverId);
         return ResponseEntity.ok(requests);
     }
@@ -128,7 +138,7 @@ public class DriverController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         Pageable pageable = PageRequest.of(page, size);
         Page<ShipmentRequestResponse> requests = shipmentRequestService.getRequestsForTrip(tripId, driverId, pageable);
         return ResponseEntity.ok(requests);
@@ -138,7 +148,7 @@ public class DriverController {
     public ResponseEntity<ShipmentRequestResponse> getRequestById(
             @PathVariable Long requestId,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         ShipmentRequestResponse request = shipmentRequestService.getRequestById(requestId, driverId);
         return ResponseEntity.ok(request);
     }
@@ -148,7 +158,7 @@ public class DriverController {
             @PathVariable Long requestId,
             @RequestBody UpdateShipmentRequestStatusRequest request,
             Authentication authentication) {
-        Long driverId = Long.parseLong(authentication.getName());
+        Long driverId = getUserId(authentication);
         ShipmentRequestResponse updatedRequest = shipmentRequestService.updateRequestStatus(requestId, driverId, request);
         return ResponseEntity.ok(updatedRequest);
     }

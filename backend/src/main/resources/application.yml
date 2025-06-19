@@ -20,12 +20,7 @@ spring:
       expiration: 86400000 # 24 hours
 
 server:
-  port: 8080
-<<<<<<< HEAD
-=======
-  servlet:
-    context-path: /api
->>>>>>> 24d585f5a812e39afc66507076feff13ebe4dd43
+  port: 8081
 
 springdoc:
   api-docs:
