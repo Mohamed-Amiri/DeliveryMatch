@@ -1,0 +1,113 @@
+<!-- Updated HTML Template -->
+<div class="dashboard-container">
+  <div class="dashboard-topbar">
+    <div class="dashboard-title">
+      <span class="welcome-text">Bienvenue,</span>
+      <span class="user-role">Expéditeur</span>
+    </div>
+    <div class="dashboard-actions">
+      <button mat-icon-button class="action-btn" aria-label="Notifications">
+        <mat-icon>notifications</mat-icon>
+        <span class="notification-badge">3</span>
+      </button>
+      <button mat-icon-button class="action-btn" aria-label="Profil" routerLink="/profile">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <button mat-icon-button class="action-btn logout-btn" aria-label="Déconnexion" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="dashboard-bg">
+    <div class="dashboard-content">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Demandes en cours</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">48</div>
+          <div class="stat-label">Colis expédiés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">€2,340</div>
+          <div class="stat-label">Économies réalisées</div>
+        </div>
+      </div>
+
+      <div class="dashboard-row animate-fade-in">
+        <mat-card class="dashboard-card glass-modern search-card">
+          <div class="card-header">
+            <div class="icon-container primary">
+              <mat-icon class="dashboard-icon">search</mat-icon>
+            </div>
+            <div class="card-badge">Populaire</div>
+          </div>
+          <div class="dashboard-card-content">
+            <h3>Rechercher un trajet</h3>
+            <p>Trouvez des trajets disponibles selon vos critères de destination et de date.</p>
+            <button mat-raised-button color="primary" class="action-button">
+              <mat-icon>search</mat-icon>
+              Rechercher maintenant
+            </button>
+          </div>
+        </mat-card>
+
+        <mat-card class="dashboard-card glass-modern requests-card">
+          <div class="card-header">
+            <div class="icon-container accent">
+              <mat-icon class="dashboard-icon">send</mat-icon>
+            </div>
+            <div class="status-indicator active">
+              <span class="dot"></span>
+              Actif
+            </div>
+          </div>
+          <div class="dashboard-card-content">
+            <h3>Mes demandes</h3>
+            <p>Gérez et suivez vos demandes de transport en cours d'exécution.</p>
+            <button mat-stroked-button color="accent" class="action-button">
+              <mat-icon>visibility</mat-icon>
+              Voir les demandes
+            </button>
+          </div>
+        </mat-card>
+
+        <mat-card class="dashboard-card glass-modern history-card">
+          <div class="card-header">
+            <div class="icon-container primary">
+              <mat-icon class="dashboard-icon">history</mat-icon>
+            </div>
+          </div>
+          <div class="dashboard-card-content">
+            <h3>Historique</h3>
+            <p>Consultez l'historique complet de vos demandes et colis expédiés.</p>
+            <button mat-stroked-button color="primary" class="action-button">
+              <mat-icon>timeline</mat-icon>
+              Voir l'historique
+            </button>
+          </div>
+        </mat-card>
+      </div>
+
+      <div class="quick-actions">
+        <h4>Actions rapides</h4>
+        <div class="quick-actions-grid">
+          <button mat-button class="quick-action-btn">
+            <mat-icon>add_circle</mat-icon>
+            Nouvelle demande
+          </button>
+          <button mat-button class="quick-action-btn">
+            <mat-icon>support_agent</mat-icon>
+            Support
+          </button>
+          <button mat-button class="quick-action-btn">
+            <mat-icon>settings</mat-icon>
+            Paramètres
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

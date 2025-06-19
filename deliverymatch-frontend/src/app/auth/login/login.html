@@ -1,0 +1,43 @@
+<div class="auth-bg">
+  <div class="auth-container animate-fade-in">
+    <mat-card class="auth-card glass-modern">
+      <div class="auth-logo">DeliveryMatch</div>
+      <div class="auth-header">
+        <mat-icon class="auth-icon" color="primary">login</mat-icon>
+        <h2>Welcome Back</h2>
+        <p class="auth-subtitle">Sign in to continue</p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="on">
+        <mat-form-field appearance="outline" class="full-width mb-3">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required autocomplete="email">
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Enter a valid email</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width mb-3">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" required autocomplete="current-password">
+          <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="full-width modern-btn" type="submit" [disabled]="loading || loginForm.invalid">
+          <mat-progress-spinner *ngIf="loading" diameter="20" mode="indeterminate"></mat-progress-spinner>
+          <span *ngIf="!loading">Sign In</span>
+        </button>
+
+        <div *ngIf="error" class="alert alert-danger mt-2">{{ error }}</div>
+      </form>
+
+      <div class="auth-divider"><span>OR</span></div>
+
+      <div class="auth-footer">
+        <span>Don't have an account?</span>
+        <a routerLink="/auth/register">Register</a>
+      </div>
+    </mat-card>
+  </div>
+</div>
