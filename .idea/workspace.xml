@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19d9dee9-715f-482a-8d50-0367ac48b641" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/DriverController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/ShipperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/ShipperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/dto/CreateTripRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/dto/CreateTripRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/security/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/security/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/deliverymatch/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/config/WebConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/config/WebConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/DriverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/DriverController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/ShipperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/ShipperController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/CreateTripRequest$CreateTripRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/CreateTripRequest$CreateTripRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/CreateTripRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/CreateTripRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequest$ShipmentRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequest$ShipmentRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequestResponse$ShipmentRequestResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequestResponse$ShipmentRequestResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequestResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/ShipmentRequestResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripResponse$TripResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripResponse$TripResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripSearchRequest$TripSearchRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripSearchRequest$TripSearchRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripSearchRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/dto/TripSearchRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/ShipmentRequest$RequestStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/ShipmentRequest$RequestStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/ShipmentRequest$ShipmentRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/ShipmentRequest$ShipmentRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/ShipmentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/ShipmentRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/Trip$TripBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/Trip$TripBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/Trip$TripStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/Trip$TripStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/Trip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/repository/ShipmentRequestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/repository/ShipmentRequestRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/repository/TripRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/repository/TripRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/security/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/security/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/service/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/service/AuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/service/ShipmentRequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/service/ShipmentRequestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/service/TripService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/deliverymatch/service/TripService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.config.server.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.routes.server.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/app/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/auth-guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/auth-routing-module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/auth.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/auth.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/auth.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/jwt-interceptor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/login/login.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/login/login.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/login/login.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/register/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/register/register.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/register/register.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/auth/register/register.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/driver/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/driver/dashboard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/driver/dashboard.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/driver/dashboard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/change-password/change-password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/change-password/change-password.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/change-password/change-password.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/change-password/change-password.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/edit/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/edit/edit.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/edit/edit.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/edit/edit.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/profile-module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/profile-routing-module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/view/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/view/view.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/view/view.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/profile/view/view.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/shipper/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/shipper/dashboard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/shipper/dashboard.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/app/shipper/dashboard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/main.server.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/server.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deliverymatch-frontend/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/deliverymatch-frontend/tsconfig.spec.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="docker" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ydIae9pyiIGHXguIzQesMvLcl5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.deliverymatch [-Dtest=NOT_RESOLVED...].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.BackendApplication.executor": "Run",
+    "Spring Boot.DeliveryMatchApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/Desktop/Deliverymatch",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\Deliverymatch\\deliverymatch-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.DeliveryMatchApplication">
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.backend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeliveryMatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.deliverymatch.DeliveryMatchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19d9dee9-715f-482a-8d50-0367ac48b641" name="Changes" comment="" />
+      <created>1750158087655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750158087655</updated>
+      <workItem from="1750158088996" duration="62931000" />
+      <workItem from="1750464906962" duration="1654000" />
+      <workItem from="1750467437104" duration="918000" />
+      <workItem from="1750523954801" duration="742000" />
+      <workItem from="1750531601723" duration="12991000" />
+      <workItem from="1750595175197" duration="8603000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
